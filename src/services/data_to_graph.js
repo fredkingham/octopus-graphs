@@ -1,14 +1,23 @@
 let translate = function(xtitle, someData) {
-  var config = {};
-  var data = someData.results.map((x) => x.consumption);
+  let config = {};
+  let data = someData.results.map((x) => x.consumption);
+
+  // lets make graphs consistent
+  let max = 70;
+  data.forEach(x => {
+    if(x > max){
+      max = x;
+    }
+  })
   data.unshift(xtitle);
-  var xAxis = someData.results.map((x) => {
+  let xAxis = someData.results.map((x) => {
     let asDate = new Date(x.interval_start);
     asDate.setMilliseconds(0);
     asDate.setSeconds(0);
     asDate.setHours(0);
     return asDate;
   });
+
   xAxis.unshift("x");
   config = {
     data: {
@@ -42,6 +51,9 @@ let translate = function(xtitle, someData) {
           rotate: 45,
         },
       },
+      y: {
+        max: max
+      }
     },
   };
   return config;
