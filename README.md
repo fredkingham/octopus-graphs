@@ -1,6 +1,11 @@
 # octopus
 
-## Project setup
+An web page to view your electricity useage with the Octopus API.
+at [https://fredkingham.github.io/octopus-graphs].
+
+
+## Developer
+### Project setup
 ```
 npm install
 ```
@@ -18,6 +23,11 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Deploy to this repos gh-pages
+```
+npm run deploy
 ```
 
 ### Customize configuration

@@ -90,7 +90,7 @@ export default {
           self.electricityData = translate("Electricity consumption", x);
         },
         () => {
-          router.push({ name: "setup" });
+          router.replace({ name: "setup" });
         }
       );
       backend.getMonthsGas(imonth, iyear).then(
@@ -98,7 +98,7 @@ export default {
           self.gasData = translate("Gas consumption", x);
         },
         () => {
-          router.push({ name: "setup" });
+          router.replace({ name: "setup" });
         }
       );
     },
