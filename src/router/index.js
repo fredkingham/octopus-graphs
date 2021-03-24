@@ -25,6 +25,7 @@ const routes = [
 ];
 
 const router = createRouter({
+  base: '/octopus-graphs/',
   history: createWebHistory(),
   routes,
 });
