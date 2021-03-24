@@ -137,7 +137,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/octopus-display/";
+/******/ 	__webpack_require__.p = "/octopus-graphs/";
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
@@ -389,7 +389,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Use
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ \"./node_modules/vue-router/dist/vue-router.esm-bundler.js\");\n/* harmony import */ var _components_SetUp_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/SetUp.vue */ \"./src/components/SetUp.vue\");\n/* harmony import */ var _components_DateRange_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/DateRange.vue */ \"./src/components/DateRange.vue\");\n\n\n\nvar routes = [{\n  path: \"/\",\n  name: \"home\",\n  redirect: function redirect() {\n    var currentDate = new Date();\n    return {\n      name: 'date',\n      params: {\n        month: currentDate.getMonth() + 1,\n        year: currentDate.getFullYear()\n      }\n    };\n  }\n}, {\n  path: \"/date/:month/:year/\",\n  name: \"date\",\n  component: _components_DateRange_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  props: true\n}, {\n  path: \"/setup\",\n  name: \"setup\",\n  component: _components_SetUp_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n}];\nvar router = Object(vue_router__WEBPACK_IMPORTED_MODULE_0__[\"createRouter\"])({\n  history: Object(vue_router__WEBPACK_IMPORTED_MODULE_0__[\"createWebHistory\"])(),\n  routes: routes\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack:///./src/router/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ \"./node_modules/vue-router/dist/vue-router.esm-bundler.js\");\n/* harmony import */ var _components_SetUp_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/SetUp.vue */ \"./src/components/SetUp.vue\");\n/* harmony import */ var _components_DateRange_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/DateRange.vue */ \"./src/components/DateRange.vue\");\n\n\n\nvar routes = [{\n  path: \"/\",\n  name: \"home\",\n  redirect: function redirect() {\n    var currentDate = new Date();\n    return {\n      name: 'date',\n      params: {\n        month: currentDate.getMonth() + 1,\n        year: currentDate.getFullYear()\n      }\n    };\n  }\n}, {\n  path: \"/date/:month/:year/\",\n  name: \"date\",\n  component: _components_DateRange_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  props: true\n}, {\n  path: \"/setup\",\n  name: \"setup\",\n  component: _components_SetUp_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n}];\nvar router = Object(vue_router__WEBPACK_IMPORTED_MODULE_0__[\"createRouter\"])({\n  base: '/octopus-graphs/',\n  history: Object(vue_router__WEBPACK_IMPORTED_MODULE_0__[\"createWebHistory\"])(),\n  routes: routes\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack:///./src/router/index.js?");
 
 /***/ }),
 
