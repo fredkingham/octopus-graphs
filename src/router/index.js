@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter } from "vue-router";
 import SetUp from "@/components/SetUp.vue";
 import DateRange from "@/components/DateRange.vue";
 
@@ -25,7 +25,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/octopus-graphs/'),
+  history: createWebHashHistory('/octopus-graphs/'),
   routes,
 });
 
