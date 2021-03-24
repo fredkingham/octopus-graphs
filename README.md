@@ -1,6 +1,6 @@
 # octopus
 
-An web page to view your electricity useage with the Octopus API.
+An web page to view your electricity useage with the Octopus API
 at [https://fredkingham.github.io/octopus-graphs](https://fredkingham.github.io/octopus-graphs).
 
 Allows you to enter your octopus api details.
