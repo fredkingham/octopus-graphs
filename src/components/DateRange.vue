@@ -87,7 +87,7 @@ export default {
       let imonth = parseInt(month);
       backend.getMonthsElectricity(imonth, iyear).then(
         (x) => {
-          self.electricityData = translate("Electricity consumption", x);
+          self.electricityData = translate("Electricity consumption", x, 70);
         },
         () => {
           router.replace({ name: "setup" });
@@ -95,7 +95,7 @@ export default {
       );
       backend.getMonthsGas(imonth, iyear).then(
         (x) => {
-          self.gasData = translate("Gas consumption", x);
+          self.gasData = translate("Gas consumption", x, 20);
         },
         () => {
           router.replace({ name: "setup" });

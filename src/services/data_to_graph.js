@@ -1,9 +1,8 @@
-let translate = function(xtitle, someData) {
+let translate = function(xtitle, someData, max) {
   let config = {};
   let data = someData.results.map((x) => x.consumption);
 
   // lets make graphs consistent
-  let max = 70;
   data.forEach(x => {
     if(x > max){
       max = x;
