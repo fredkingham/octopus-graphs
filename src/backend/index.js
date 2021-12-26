@@ -127,16 +127,17 @@ var backend = {
         (response) => {
           if (response.ok) {
             response.json().then((json) => {
-              window.localStorage[url] = JSON.stringify(json);
+              window.localStorage[url] = {
+                result: JSON.stringify(json),
+                cacheDate: JSON.stringify(new Date())
+              }
               result(json);
             });
           } else {
-            console.log('boom');
             reject(response);
           }
         },
         (failed) => {
-          console.log('bash');
           reject(failed);
         }
       );
@@ -144,14 +145,20 @@ var backend = {
   },
   get(url, cache) {
     let cached = cache || typeof cache === "undefined";
-    if (cached && window.localStorage[url]) {
-      return Promise.resolve(JSON.parse(window.localStorage[url]));
+    if (cached && window.localStorage[url] && window.localStorage[url].result) {
+      return Promise.resolve(JSON.parse(window.localStorage[url].result));
     }
     return this.getUrl(url);
   },
   getMonthsElectricity(someMonth, someYear, cache) {
     const electricityUrl = `${API_URL}electricity-meter-points/${this.user.electrictityMeterPoint }/meters/${this.user.electricitySerialNumber}/consumption/`;
     const url = electricityUrl + getPeriodQueryString(someMonth, someYear);
+    const currentDate = new Date();
+
+    // never cache the current month
+    if(someMonth === currentDate.getMonth() && someYear === currentDate.getFullYear()){
+      cache = false;
+    }
     return this.get(url, cache).then(x => {
       return this.clean(x, someMonth);
     });
@@ -159,6 +166,12 @@ var backend = {
   getMonthsGas(someMonth, someYear, cache) {
     const gasUrl = `${API_URL}gas-meter-points/${this.user.gasMeterPoint}/meters/${this.user.gasSerialNumber}/consumption/`;
     const url = gasUrl + getPeriodQueryString(someMonth, someYear);
+    const currentDate = new Date();
+
+    // never cache the current month
+    if(someMonth === currentDate.getMonth() && someYear === currentDate.getFullYear()){
+      cache = false;
+    }
     return this.get(url, cache).then(x => {
       return this.clean(x, someMonth);
     })
