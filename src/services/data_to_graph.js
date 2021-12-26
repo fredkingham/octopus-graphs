@@ -19,6 +19,9 @@ let translate = function(xtitle, someData, max) {
 
   xAxis.unshift("x");
   config = {
+    padding: {
+      top: 10
+    },
     data: {
       x: "x",
       columns: [xAxis, data],
