@@ -123,7 +123,7 @@ export default {
     this.update(to.params.year, to.params.month);
   },
   mounted: function() {
-    this.update(this.currentDate.getFullYear(), this.currentDate.getMonth());
+    this.update(this.currentDate.getFullYear(), this.currentDate.getMonth()+1);
   },
 };
 </script>
