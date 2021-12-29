@@ -74,12 +74,12 @@ export default {
       return someDate.toLocaleString("default", { month: "long" });
     },
     update: function(year, month) {
+      // month here is not js month, ie 12 is December
       let today = new Date();
-      if (year >= today.getFullYear()) {
-        if (month > today.getMonth() + 1) {
-          this.future = true;
-          return;
-        }
+      let asDate = new Date(year, month-1, 1);
+      if(asDate > today){
+        this.future = true;
+        return;
       }
       this.future = false;
       let self = this;
